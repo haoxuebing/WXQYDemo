@@ -41,6 +41,7 @@ var save_auth_code = function(req, res, resData) {
         fs.open(corpInfoPath, 'w', function(err, fd) {
             if (!err) {
                 fs.write(fd, buffer, 0, buffer.length, 0, () => {
+                    readCorpInfo();
                     res.send('授权完成');
                 });
             }
@@ -49,9 +50,15 @@ var save_auth_code = function(req, res, resData) {
 
 }
 
-/*!
- * 将xml2js解析出来的对象转换成直接可访问的对象
- */
+var readCorpInfo = function() {
+    if (fs.existsSync(corpInfoPath)) {
+        var s = fs.readFileSync(corpInfoPath, 'utf-8').toString();
+        if (s)
+            process.CorpInfo = JSON.parse(s);
+    }
+}
+
+//将xml2js解析出来的对象转换成直接可访问的对象
 var formatMessage = function(result) {
     var message = {};
     if (typeof result === 'object') {
@@ -76,5 +83,6 @@ module.exports = {
     readSuitTicket: readSuitTicket,
     saveSuitTicket: saveSuitTicket,
     save_auth_code: save_auth_code,
+    readCorpInfo: readCorpInfo,
     formatMessage: formatMessage
 }

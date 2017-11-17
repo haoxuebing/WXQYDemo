@@ -6,7 +6,27 @@ var corpId = config.corpid;
 var suite_id = config.suite_id;
 var suite_secret = config.suite_secret;
 
-// 获取suite_access_token
+//获取access_token
+var get_access_token = function(cb) {
+    var url = 'https://qyapi.weixin.qq.com/cgi-bin/service/get_corp_token?suite_access_token=' + process.suite_token;
+
+    var body = {
+        headers: { "Content-Type": "application/json" },
+        data: {
+            suite_id: suite_id,
+            auth_corpid: process.CorpInfo.auth_corp_info.corpid,
+            permanent_code: process.CorpInfo.permanent_code
+        }
+    }
+
+
+    client.post(url, body, function(data, response) {
+        process.access_token = data.access_token;
+        cb(null, data);
+    })
+}
+
+// 获取suite_token
 var get_suite_token = function(cb) {
     var url = 'https://qyapi.weixin.qq.com/cgi-bin/service/get_suite_token';
 
@@ -21,7 +41,10 @@ var get_suite_token = function(cb) {
 
 
     client.post(url, body, function(data, response) {
-        cb(null, data);
+        process.suite_token = data.suite_access_token;
+        if (cb != undefined) {
+            cb(null, data);
+        }
     })
 
 }
@@ -81,6 +104,7 @@ var get_permanent_code = function(suite_token, auth_code, cb) {
 }
 
 module.exports = {
+    get_access_token: get_access_token,
     get_suite_token: get_suite_token,
     get_pre_auth_code: get_pre_auth_code,
     set_session_info: set_session_info,

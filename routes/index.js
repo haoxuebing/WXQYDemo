@@ -15,16 +15,17 @@ var cryptor = new WXBizMsgCrypt(token, encodingAESKey, corpId);
 var service = require('../modules/service');
 var wxContent = require('../modules/wxContent');
 wxContent.readSuitTicket();
+wxContent.readCorpInfo();
+service.get_suite_token();
+var tongxunlu = require('../modules/tongxunlu');
 
 var resData = {};
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
-
     Thenjs(cont => {
         resData.SuiteTicket = process.SuiteTicket;
-        service.get_suite_token(cont)
+        service.get_suite_token(cont);
     }).then((cont, rlt) => {
         resData.suite_access_token = rlt.suite_access_token || rlt.errmsg;
         service.get_pre_auth_code(rlt.suite_access_token, cont);
@@ -51,6 +52,21 @@ router.get('/wx/idsp/auth_callback', function(req, res, next) {
     wxContent.save_auth_code(req, res, resData);
 })
 
+router.get('/userinfo', function(req, res, next) {
+    Thenjs(cont => {
+        tongxunlu.getUserList(cont);
+    }).then((cont, rlt) => {
+        res.send(JSON.stringify(rlt));
+    })
+})
+
+router.get('/updateUserInfo', function(req, res, next) {
+    Thenjs(cont => {
+        tongxunlu.updateUserInfo(cont);
+    }).then((cont, rlt) => {
+        res.send(JSON.stringify(rlt));
+    })
+})
 
 router.get('/wx/suit', function(req, res, next) {
     var echostr = req.query.echostr;
@@ -58,7 +74,9 @@ router.get('/wx/suit', function(req, res, next) {
     res.send(s.message);
 });
 
-//微信获取ticket
+
+
+//获取微信推送ticket
 router.post('/wx/suit', function(req, res, next) {
 
     console.log('微信回调');
