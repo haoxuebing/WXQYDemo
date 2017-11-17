@@ -19,4 +19,4 @@
 
 ### 请我喝杯咖啡
 <img src="weixin.png" width = "200" height = "300" alt="微信"/>
-<img src="zhifubao.jpg" width = "200" height = "300" style="position: absolute;margin-top: -381px;margin-left: 200px;" alt="支付宝"/>
+<img src="zhifubao.jpg" width = "200" height = "300" alt="支付宝"/>
