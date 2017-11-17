@@ -11,9 +11,9 @@
 
 ## 另外config文件夹请自行创建 <br/>
 ![Alt Picture](1.png) <br/>
-![Alt Picture](2.png)
+![Alt Picture](2.png) <br/>
 
-##作者：郝雪冰
-##QQ:949096562
+## 作者：郝雪冰 <br/>
+## QQ:949096562<br/>
 
 
