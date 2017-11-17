@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+    <p>
+        suite_ticket：
+        <%= resData.SuiteTicket %>
+    </p>
+    <p>
+        suite_access_token：
+        <%= resData.suite_access_token %>
+    </p>
+    <p>
+        pre_auth_code：
+        <%= resData.pre_auth_code %>
+    </p>
+    <a href='<%= resData.preUrl %>' target="_black">授权应用</a>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "workwechatdemo",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "config": "^1.28.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "ejs": "~2.5.6",
+    "express": "~4.15.2",
+    "morgan": "~1.8.1",
+    "node-rest-client": "^3.1.0",
+    "serve-favicon": "~2.4.2",
+    "thenjs": "^2.0.3",
+    "urllib": "^2.25.1",
+    "wechat-crypto": "^0.0.2",
+    "xml2js": "^0.4.19"
+  }
+}
