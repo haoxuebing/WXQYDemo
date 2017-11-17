@@ -18,4 +18,5 @@
 ### QQ：949096562<br/>
 
 ### 请我喝杯咖啡
-![Alt Picture](weixin.png) ![Alt Picture](zhifubao.jpg)
+<img src="weixin.png" width = "200" height = "300" alt="微信"/>
+<img src="zhifubao.jpg" width = "200" height = "300" alt="支付宝"/>
