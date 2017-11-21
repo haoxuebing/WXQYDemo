@@ -74,7 +74,7 @@ function sendFile(req, res) {
                 msgtype: "image",
                 agentid: process.CorpInfo.auth_info.agent[0].agentid, //'1000046',
                 image: {
-                    "media_id": "3-V6oGol9DKqF0y79_YtHfAd3vIvPQEqxI9nl24sjAo0"
+                    "media_id": "3zJ_y5BnQbCOHoMPggYRW6bwMX7mCOJAYbcxc3camaqc" //"3-V6oGol9DKqF0y79_YtHfAd3vIvPQEqxI9nl24sjAo0"
                 },
                 safe: 0
 
@@ -98,9 +98,9 @@ function uploadFile(req, res) {
             service.get_req_access_token(req, cont);
         }
     }).then((cont, rlt) => {
-        var filepath = process.cwd() + '/pic/1.png';
+        var filepath = process.cwd() + '/pic/4.jpg';
 
-        var api = new API(null, null, 10, function(callback) {
+        var api = new API(null, null, null, function(callback) {
             callback(null, {
                 accessToken: process.access_token
             });

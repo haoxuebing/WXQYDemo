@@ -10,6 +10,8 @@
 
 ## 微信服务器会向套件的“系统事件接收URL”定时（每十分钟）推送ticket，开发者需保存下来
 
+## 最新迭代加入auth2登录认证 、发消息、发文件、上传文件
+
 ## 另外config文件夹请自行创建 <br/>
 ![Alt Picture](pic/1.png) <br/>
 ![Alt Picture](pic/2.png) <br/>
@@ -17,6 +19,6 @@
 ### 作者：郝雪冰 <br/>
 ### QQ：949096562<br/>
 
-### 请吃糖
+### 请吃糖 :)
 <img src="pic/weixin.png" width = "200" height = "300" alt="微信"/>
 <img src="pic/zhifubao.jpg" width = "200" height = "300" alt="支付宝"/>
