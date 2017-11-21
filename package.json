@@ -12,12 +12,17 @@
     "debug": "~2.6.3",
     "ejs": "~2.5.6",
     "express": "~4.15.2",
+    "express-session": "^1.15.6",
     "morgan": "~1.8.1",
+    "needle": "^2.0.1",
     "node-rest-client": "^3.1.0",
+    "path": "^0.12.7",
+    "request": "^2.83.0",
     "serve-favicon": "~2.4.2",
     "thenjs": "^2.0.3",
     "urllib": "^2.25.1",
     "wechat-crypto": "^0.0.2",
+    "wechat-enterprise-api": "^0.3.0",
     "xml2js": "^0.4.19"
   }
 }

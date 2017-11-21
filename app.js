@@ -8,6 +8,18 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 
 var app = express();
+var session = require('express-session');
+
+
+app.use(session({
+    secret: 'secret', //secret值可以任意，但不能为空
+    name: 'user_session', //这里的name值得是cookie的name，默认cookie的name是：connect.sid
+    cookie: {
+        maxAge: 60 * 60 * 1000
+    }, //设置maxAge是60分钟，即60分钟后session和相应的cookie失效过期
+    resave: false,
+    saveUninitialized: true,
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

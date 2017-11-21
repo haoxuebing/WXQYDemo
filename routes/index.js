@@ -18,6 +18,7 @@ wxContent.readSuitTicket();
 wxContent.readCorpInfo();
 service.get_suite_token();
 var tongxunlu = require('../modules/tongxunlu');
+var sendMsg = require('../modules/sendMsg');
 
 var resData = {};
 
@@ -47,6 +48,18 @@ router.get('/', function(req, res, next) {
 
 });
 
+
+router.get('/sendMsg', function(req, res, next) {
+    sendMsg.send(req, res);
+})
+
+router.get('/sendFile', function(req, res, next) {
+    sendMsg.sendFile(req, res);
+})
+
+router.get('/uploadFile', function(req, res, next) {
+    sendMsg.uploadFile(req, res);
+})
 
 router.get('/wx/idsp/auth_callback', function(req, res, next) {
     wxContent.save_auth_code(req, res, resData);
