@@ -19,7 +19,7 @@ function send(req, res) {
             service.get_req_access_token(req, cont);
         }
     }).then((cont, rlt) => {
-        auth.getUserId(req, res, 'http://testwxqy1.iyunxiao.net/sendMsg', cont)
+        auth.getUserId(req, res, 'http://testwxqy.yunxiao.com/sendMsg', cont)
     }).then((cont, rlt) => {
 
         var url = 'https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=' + process.access_token;
@@ -60,7 +60,7 @@ function sendFile(req, res) {
             service.get_req_access_token(req, cont);
         }
     }).then((cont, rlt) => {
-        auth.getUserId(req, res, 'http://testwxqy1.iyunxiao.net/sendFile', cont)
+        auth.getUserId(req, res, 'http://testwxqy.yunxiao.com/sendFile', cont)
     }).then((cont, rlt) => {
 
         var url = 'https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=' + process.access_token;

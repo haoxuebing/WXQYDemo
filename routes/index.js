@@ -19,6 +19,8 @@ wxContent.readCorpInfo();
 service.get_suite_token();
 var tongxunlu = require('../modules/tongxunlu');
 var sendMsg = require('../modules/sendMsg');
+var jssdk = require('../modules/jssdk');
+var idsp = require('../modules/idsp');
 
 var resData = {};
 
@@ -48,6 +50,14 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.get('/idspUserInfo', function(req, res, next) {
+    idsp.getUserInfo(req, res, 'http://testwxqy.yunxiao.com/idspUserInfo');
+})
+
+router.get('/getUserCourse', function(req, res, next) {
+    idsp.getUserCourse(req, res, 'http://testwxqy.yunxiao.com/getUserCourse');
+})
+
 
 router.get('/sendMsg', function(req, res, next) {
     sendMsg.send(req, res);
@@ -55,6 +65,15 @@ router.get('/sendMsg', function(req, res, next) {
 
 router.get('/sendFile', function(req, res, next) {
     sendMsg.sendFile(req, res);
+})
+
+router.get('/testjssdk', function(req, res, next) {
+    req.session.corpid = req.query.corpid;
+    res.render('testjssdk');
+})
+
+router.get('/jssdk', function(req, res, next) {
+    jssdk.getJSAPIConfig(req, res);
 })
 
 router.get('/uploadFile', function(req, res, next) {

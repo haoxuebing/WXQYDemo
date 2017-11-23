@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        JSSDK-Test
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery-1.10.2.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</head>
+
+<body>
+
+    <p>
+        JSSDK-Test
+    </p>
+
+</body>
+<script>
+    $(function() {
+        setJSAPI();
+        setTimeout(function() {
+            wx.closeWindow();
+        }, 2000)
+
+    })
+
+    function setJSAPI() {
+        $.get('/jssdk?url2=' + encodeURIComponent(location.href.split('#')[0]), function(result) {
+            console.log(JSON.stringify(result))
+            wx.config({
+                beta: true,
+                debug: true,
+                appId: result.corpid,
+                timestamp: Number(result.timestamp),
+                nonceStr: result.noncestr,
+                signature: result.signature,
+                jsApiList: ['closeWindow']
+            });
+            wx.ready(function() {
+
+            });
+            wx.error(function(err) {
+
+            })
+        })
+    }
+</script>
+
+</html>

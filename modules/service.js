@@ -34,7 +34,7 @@ var get_req_access_token = function(req, cb) {
         headers: { "Content-Type": "application/json" },
         data: {
             suite_id: suite_id,
-            auth_corpid: req.query.corpid,
+            auth_corpid: req.query.corpid || req.session.corpid,
             permanent_code: process.CorpInfo.permanent_code
         }
     }
@@ -95,7 +95,7 @@ var set_session_info = function(suite_token, pre_auth_code, cb) {
         data: {
             pre_auth_code: pre_auth_code,
             session_info: {
-                appid: [10],
+                appid: [2],
                 auth_type: 1
             }
         }
