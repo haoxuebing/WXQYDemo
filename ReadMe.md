@@ -18,5 +18,4 @@
 ### QQ：949096562<br/>
 
 ### 请吃糖 :)
-<img src="pic/weixin.png" width = "200" height = "300" alt="微信"/>
-<img src="pic/zhifubao.jpg" width = "200" height = "300" alt="支付宝"/>
+<img src="pic/pay.png" width = "200" height = "300" alt="吃糖"/>
