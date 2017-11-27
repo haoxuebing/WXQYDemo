@@ -18,4 +18,4 @@
 ### QQ：949096562<br/>
 
 ### 请吃糖 :)
-<img src="pic/pay.png" width = "200" height = "300" alt="吃糖"/>
+<img src="pic/pay.png" alt="吃糖"/>
