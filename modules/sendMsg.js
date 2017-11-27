@@ -98,7 +98,7 @@ function uploadFile(req, res) {
             service.get_req_access_token(req, cont);
         }
     }).then((cont, rlt) => {
-        var filepath = process.cwd() + '/pic/4.jpg';
+        var filepath = process.cwd() + '/pic/3.png';
 
         var api = new API(null, null, null, function(callback) {
             callback(null, {
