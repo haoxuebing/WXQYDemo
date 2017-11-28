@@ -1,9 +1,9 @@
 {
     "port": 3001,
-    "corpid": "wx5718f6ab2634e773",
-    "suite_id": "tjc3cbc583005f7a82",
-    "suite_secret": "SjlU7tkQR7Q-x_M8lTTgIbuwwSiRXSHO-XCtPAvx_eg",
-    "token": "buKPEa8o",
-    "encodingAESKey": "aDbZlvtcFQ5znVJz5CIvgYy0ROcXhpMj7JdFVAVKcpz",
+    "corpid": "",
+    "suite_id": "",
+    "suite_secret": "",
+    "token": "",
+    "encodingAESKey": "",
     "authCallbackUrl": "http://testwxqy.yunxiao.com/wx/idsp/auth_callback"
 }
